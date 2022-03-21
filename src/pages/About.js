@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Offers from './Offers';
 
 export default function About() {
@@ -24,10 +24,9 @@ export default function About() {
         doloremque. Corporis in et placeat unde sapiente perspiciatis minus!
         Recusandae, ad!
       </p>
-
-      {/* <Route path='/about/offers'>
-        <Offers />
-      </Route> */}
+      <Routes>
+        <Route path='offers' element={<Offers />} />
+      </Routes>
     </div>
   );
 }
