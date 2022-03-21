@@ -1,9 +1,9 @@
-import { Route, useParams, useRouteMatch } from 'react-router-dom';
+import { Route, useParams } from 'react-router-dom';
 import Offers from './Offers';
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const { path } = useRouteMatch();
+  // const { path } = useRouteMatch();
 
   return (
     <div className='content'>
@@ -29,9 +29,9 @@ export default function ProductDetails() {
         </div>
       </div>
 
-      <Route path={`${path}/offers`}>
+      {/* <Route path={`${path}/offers`}>
         <Offers />
-      </Route>
+      </Route> */}
     </div>
   );
 }

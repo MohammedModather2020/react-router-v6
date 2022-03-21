@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
@@ -14,18 +14,12 @@ function App() {
           <Link to='/about'>About</Link>
           <Link to='/products'>Products</Link>
         </nav>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/about'>
-            <About />
-          </Route>
-          <Route path='/products/:id'>
-            <ProductDetails />
-          </Route>
-          <Route path='/products'>
-            <Products />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
+          <Route path='/products' element={<Products />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
